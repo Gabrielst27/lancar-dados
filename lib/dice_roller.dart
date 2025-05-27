@@ -12,6 +12,7 @@ class DiceRoller extends StatefulWidget {
 }
 
 class _DiceRollerState extends State<DiceRoller> {
+  final randomizer = Random();
   var currentDiceRoll = 1;
 
   @override
@@ -27,7 +28,7 @@ class _DiceRollerState extends State<DiceRoller> {
         TextButton(
           onPressed: () {
             setState(() {
-              currentDiceRoll = Random().nextInt(6) + 1;
+              currentDiceRoll = randomizer.nextInt(6) + 1;
             });
           },
           style: TextButton.styleFrom(
